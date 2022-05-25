@@ -7,22 +7,26 @@
 
 import UIKit
 
-class CryptoTableViewCell: UITableViewCell {
+protocol CryptoTableViewCellDisplayLogic: AnyObject {
+    func displayCellForCoin(viewModel: CryptoTableViewCellModel.Something.ViewModel)
+}
+
+class CryptoTableViewCell: UITableViewCell, CryptoTableViewCellDisplayLogic {
 
     @IBOutlet weak var imageCoinView: UIImageView!
     @IBOutlet weak var nameCoinLabel: UILabel!
-    @IBOutlet weak var maxCoinSupplyLabel: UILabel!
+    @IBOutlet weak var priceChangePercentage24hLabel: UILabel!
     @IBOutlet weak var priceCoinLabel: UILabel!
+    
+    var interactor: CryptoTableViewCellBusinessLogic?
+    var router: (NSObjectProtocol & CryptoTableViewCellRoutingLogic & CryptoTableViewCellDataPassing)?
+    var cryptoTableViewCellConfigurator = CryptoTableViewCellConfigurator()
+    
+    
+    // MARK: Object lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func addData(model: Model){
-        nameCoinLabel.text = model.name
-        maxCoinSupplyLabel.text = String(describing: model.max_supply)
-        priceCoinLabel.text = String(describing: model.current_price)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,5 +34,21 @@ class CryptoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    // MARK: Get data for cell
+    
+    func getDataForCell() {
+        let request = CryptoTableViewCellModel.Something.Request()
+        interactor?.provideCoinForCell(request: request)
+    }
+    
+    func displayCellForCoin(viewModel: CryptoTableViewCellModel.Something.ViewModel) {
+        imageCoinView.image = UIImage(data: viewModel.imageCoinData)
+        nameCoinLabel.text = viewModel.nameCoin
+        priceChangePercentage24hLabel.text = viewModel.priceChangePercentage24h
+        priceCoinLabel.text = viewModel.priceCoin
+    }
+    
 
 }
