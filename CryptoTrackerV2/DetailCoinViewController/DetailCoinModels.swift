@@ -13,8 +13,8 @@
 import UIKit
 
 enum DetailCoin {
-    // MARK: Use cases
     
+    // MARK: Use cases
     enum ShowDetails {
         struct Request {
         }

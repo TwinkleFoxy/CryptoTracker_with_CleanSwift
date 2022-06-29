@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		889AF20E2865AA210061D829 /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF2082865AA210061D829 /* FavouritePresenter.swift */; };
+		889AF2102865AA210061D829 /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF20A2865AA210061D829 /* FavouriteRouter.swift */; };
+		889AF2112865AA210061D829 /* FavouriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF20B2865AA210061D829 /* FavouriteModels.swift */; };
+		889AF2122865AA210061D829 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF20C2865AA210061D829 /* FavouriteViewController.swift */; };
+		889AF2132865AA210061D829 /* FavouriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF20D2865AA210061D829 /* FavouriteInteractor.swift */; };
+		889AF21628679D740061D829 /* CashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AF21528679D740061D829 /* CashData.swift */; };
 		88F25A6C282E6A7400EE8B0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F25A6B282E6A7400EE8B0F /* AppDelegate.swift */; };
 		88F25A6E282E6A7400EE8B0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F25A6D282E6A7400EE8B0F /* SceneDelegate.swift */; };
 		88F25A73282E6A7400EE8B0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F25A71282E6A7400EE8B0F /* Main.storyboard */; };
@@ -39,6 +45,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		889AF2082865AA210061D829 /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
+		889AF20A2865AA210061D829 /* FavouriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
+		889AF20B2865AA210061D829 /* FavouriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModels.swift; sourceTree = "<group>"; };
+		889AF20C2865AA210061D829 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		889AF20D2865AA210061D829 /* FavouriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteInteractor.swift; sourceTree = "<group>"; };
+		889AF21528679D740061D829 /* CashData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashData.swift; sourceTree = "<group>"; };
 		88F25A68282E6A7400EE8B0F /* CryptoTrackerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTrackerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F25A6B282E6A7400EE8B0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F25A6D282E6A7400EE8B0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +95,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		889AF2072865A96F0061D829 /* FavouriteCryptoTable */ = {
+			isa = PBXGroup;
+			children = (
+				889AF20C2865AA210061D829 /* FavouriteViewController.swift */,
+				889AF20D2865AA210061D829 /* FavouriteInteractor.swift */,
+				889AF2082865AA210061D829 /* FavouritePresenter.swift */,
+				889AF20B2865AA210061D829 /* FavouriteModels.swift */,
+				889AF20A2865AA210061D829 /* FavouriteRouter.swift */,
+			);
+			path = FavouriteCryptoTable;
+			sourceTree = "<group>";
+		};
+		889AF21428679D2A0061D829 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				889AF21528679D740061D829 /* CashData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		88F25A5F282E6A7400EE8B0F = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				88F25A89282E79BE00EE8B0F /* MainCryptoTable */,
+				889AF2072865A96F0061D829 /* FavouriteCryptoTable */,
 				88F25A88282E797E00EE8B0F /* DetailCoinViewController */,
 				88F25A87282E796300EE8B0F /* CryptoTableViewCell */,
 				88F25A8A282E79F100EE8B0F /* StoryBoard */,
 				88F25A8E282E7AD200EE8B0F /* Models */,
+				889AF21428679D2A0061D829 /* Helpers */,
 				88F25A8D282E7A7100EE8B0F /* Services */,
 				88F25A8C282E7A3800EE8B0F /* Supporting Files */,
 				88F25A8B282E7A2300EE8B0F /* Resources */,
@@ -273,12 +307,15 @@
 			files = (
 				88F25A90282E7BFA00EE8B0F /* NetworkManager.swift in Sources */,
 				88F25A6C282E6A7400EE8B0F /* AppDelegate.swift in Sources */,
+				889AF21628679D740061D829 /* CashData.swift in Sources */,
 				88F25B24283D495100EE8B0F /* CryptoTableViewCellConfigurator.swift in Sources */,
+				889AF2132865AA210061D829 /* FavouriteInteractor.swift in Sources */,
 				88F25AF8283BC91B00EE8B0F /* DetailCoinWorker.swift in Sources */,
 				88F25AFA283BC91B00EE8B0F /* DetailCoinModels.swift in Sources */,
 				88F25A92282E7C4400EE8B0F /* ImageManager.swift in Sources */,
 				88F25AFE283BFD0700EE8B0F /* DetailCoinConfigurator.swift in Sources */,
 				88F25AFC283BC91B00EE8B0F /* DetailCoinInteractor.swift in Sources */,
+				889AF2122865AA210061D829 /* FavouriteViewController.swift in Sources */,
 				88F25A6E282E6A7400EE8B0F /* SceneDelegate.swift in Sources */,
 				88F25B14283C020D00EE8B0F /* CryptoTableViewCellModels.swift in Sources */,
 				88F25A86282E732D00EE8B0F /* CryptoTableViewCell.swift in Sources */,
@@ -291,11 +328,14 @@
 				88F25AC828327A3500EE8B0F /* DataManager.swift in Sources */,
 				88F25B13283C020D00EE8B0F /* CryptoTableViewCellRouter.swift in Sources */,
 				88F25A94282E81A800EE8B0F /* Coin.swift in Sources */,
+				889AF2112865AA210061D829 /* FavouriteModels.swift in Sources */,
 				88F25B1D283D3BA100EE8B0F /* MainPresenter.swift in Sources */,
 				88F25B20283D3BA100EE8B0F /* MainModels.swift in Sources */,
 				88F25B12283C020D00EE8B0F /* CryptoTableViewCellWorker.swift in Sources */,
 				88F25B1F283D3BA100EE8B0F /* MainRouter.swift in Sources */,
 				88F25B26283D6E5900EE8B0F /* CellViewModelProtocol.swift in Sources */,
+				889AF2102865AA210061D829 /* FavouriteRouter.swift in Sources */,
+				889AF20E2865AA210061D829 /* FavouritePresenter.swift in Sources */,
 				88F25B22283D3BA100EE8B0F /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

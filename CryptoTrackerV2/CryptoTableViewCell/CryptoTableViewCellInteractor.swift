@@ -32,7 +32,6 @@ class CryptoTableViewCellInteractor: CryptoTableViewCellBusinessLogic, CryptoTab
     }
     
     // MARK: Provide coin for cell
-    
     func provideCoinForCell(request: CryptoTableViewCellModel.Something.Request) {
         worker = CryptoTableViewCellWorker()
         let imageData = worker?.fetchImageData(imageUrl: viewModelCell.imageCoin)

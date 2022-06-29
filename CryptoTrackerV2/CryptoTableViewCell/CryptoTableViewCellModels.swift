@@ -13,8 +13,8 @@
 import UIKit
 
 enum CryptoTableViewCellModel {
-    // MARK: Use cases
     
+    // MARK: Use cases
     enum Something {
         struct Request {
         }

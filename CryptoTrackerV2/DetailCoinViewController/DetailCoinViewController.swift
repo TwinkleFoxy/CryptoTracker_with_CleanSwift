@@ -30,7 +30,6 @@ class DetailCoinViewController: UIViewController, DetailCoinDisplayLogic {
     
     
     // MARK: Object lifecycle
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         detailCoinConfigurator.configure(viewController: self)
@@ -43,12 +42,15 @@ class DetailCoinViewController: UIViewController, DetailCoinDisplayLogic {
     
     
     // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        passRequest()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        passRequest()
+    }
     
     @IBAction func favoritButtonPressed(_ sender: UIBarButtonItem) {
         interactor?.changeFavoritStatus()
@@ -56,7 +58,6 @@ class DetailCoinViewController: UIViewController, DetailCoinDisplayLogic {
     
     
     // MARK: Pass request
-    
     func passRequest() {
         let request = DetailCoin.ShowDetails.Request()
         interactor?.doProvideCoinDetails(request: request)

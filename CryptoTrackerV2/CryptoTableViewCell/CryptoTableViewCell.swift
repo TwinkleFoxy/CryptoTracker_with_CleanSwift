@@ -24,7 +24,6 @@ class CryptoTableViewCell: UITableViewCell, CryptoTableViewCellDisplayLogic {
     
     
     // MARK: Object lifecycle
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -37,8 +36,7 @@ class CryptoTableViewCell: UITableViewCell, CryptoTableViewCellDisplayLogic {
     
     
     // MARK: Get data for cell
-    
-    func getDataForCell() {
+    func setupCell() {
         let request = CryptoTableViewCellModel.Something.Request()
         interactor?.provideCoinForCell(request: request)
     }
@@ -49,6 +47,4 @@ class CryptoTableViewCell: UITableViewCell, CryptoTableViewCellDisplayLogic {
         priceChangePercentage24hLabel.text = viewModel.priceChangePercentage24h
         priceCoinLabel.text = viewModel.priceCoin
     }
-    
-
 }

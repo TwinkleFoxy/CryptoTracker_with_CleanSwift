@@ -21,7 +21,6 @@ class CryptoTableViewCellPresenter: CryptoTableViewCellPresentationLogic {
     weak var viewController: CryptoTableViewCellDisplayLogic?
     
     // MARK: Present coin for cell
-    
     func presentCoinForCell(response: CryptoTableViewCellModel.Something.Response) {
         let data = response.imageCoinData ?? Data()
         let priceCoin = "\(response.priceCoin) $"

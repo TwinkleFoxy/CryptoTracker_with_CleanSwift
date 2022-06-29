@@ -29,7 +29,6 @@ class DetailCoinInteractor: DetailCoinBusinessLogic, DetailCoinDataStore {
 
     
     // MARK: Provide Coin Details
-    
     func doProvideCoinDetails(request: DetailCoin.ShowDetails.Request) {
         guard let coin = coin else { return }
         isFavorit = worker.getFavoritStatus(coinName: coin.name)
@@ -46,6 +45,7 @@ class DetailCoinInteractor: DetailCoinBusinessLogic, DetailCoinDataStore {
         presenter?.presentCoinDetails(response: response)
     }
     
+    //MARK: Change favorit status
     func changeFavoritStatus() {
         guard let coin = coin else { return }
         isFavorit.toggle()

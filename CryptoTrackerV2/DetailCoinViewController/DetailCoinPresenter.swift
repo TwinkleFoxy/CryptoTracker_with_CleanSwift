@@ -22,28 +22,27 @@ class DetailCoinPresenter: DetailCoinPresentationLogic {
     weak var viewController: DetailCoinDisplayLogic?
     
     // MARK: Present coin details
-    
     func presentCoinDetails(response: DetailCoin.ShowDetails.Response) {
-        let coinName = "\(response.coinName)"
-        let coinPrice = "\(response.coinPrice) $"
-        let marketCap = "\(response.marketCap)"
-        var curculatingSupplyString = ""
-        if let curculatingSupply = response.curculatingSupply { curculatingSupplyString = "\(curculatingSupply)" } else {
-            curculatingSupplyString = "No Data"
+        let coinName = "Coin Name: \(response.coinName)"
+        let coinPrice = "Coin Price: \(response.coinPrice) $"
+        let marketCap = "Market Cap: \(response.marketCap)"
+        var circulatingSupplyString = ""
+        if let circulatingSupply = response.curculatingSupply { circulatingSupplyString = "Circul Supply: \(circulatingSupply)" } else {
+            circulatingSupplyString = "Circul Supply: No Data"
         }
         var maxSupplyString = ""
-        if let maxSupply = response.maxSupply { maxSupplyString = "\(maxSupply)" } else {
-            maxSupplyString = "No Data"
+        if let maxSupply = response.maxSupply { maxSupplyString = "Max Supply: \(maxSupply)" } else {
+            maxSupplyString = "Max Supply: No Data"
         }
-        let high24h = "\(response.high24h)"
-        let low24h = "\(response.low24h)"
-        let priceChange24h = "\(response.priceChange24h) %"
+        let high24h = "High 24h: \(response.high24h)"
+        let low24h = "Low 24h: \(response.low24h)"
+        let priceChange24h = "Price Change 24h: \(response.priceChange24h) %"
         
         
         let viewModel = DetailCoin.ShowDetails.ViewModel(coinName: coinName,
                                                          coinPrice: coinPrice,
                                                          marketCap: marketCap,
-                                                         curculatingSupply: curculatingSupplyString,
+                                                         curculatingSupply: circulatingSupplyString,
                                                          maxSupply: maxSupplyString,
                                                          high24h: high24h,
                                                          low24h: low24h,
@@ -52,6 +51,7 @@ class DetailCoinPresenter: DetailCoinPresentationLogic {
         viewController?.displayCoinDetails(viewModel: viewModel)
     }
     
+    //MARK: Present favorit status
     func presentFavoritStatus(response: DetailCoin.SetFavoritStatus.Response) {
         let isFavorit = DetailCoin.SetFavoritStatus.ViewModel(favoritStatus: response.favoritStatus)
         viewController?.displayFavoritStatus(viewModel: isFavorit)

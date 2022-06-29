@@ -13,24 +13,53 @@
 import UIKit
 
 protocol MainPresentationLogic {
-    func presentListCoins(response: Main.ShowCoinsList.Response)
+    func presentCoinsList(response: Main.ShowCoinsList.Response)
+    func presentUpdatedCoinsList(response: Main.ShowUpdateCoinList.Response)
+    func presentSearchedCoinsList(response: Main.ShowSearchedCoinList.Response)
 }
 
 class MainPresenter: MainPresentationLogic {
     
     weak var viewController: MainDisplayLogic?
     
-    // MARK: Do something
-    
-    func presentListCoins(response: Main.ShowCoinsList.Response) {
-        var viewModeForCell: [Main.ShowCoinsList.ViewModel.CoinCellViewModel] = []
+    // MARK: Present coins list
+    func presentCoinsList(response: Main.ShowCoinsList.Response) {
+        var viewModeForCells: [Main.ShowCoinsList.ViewModel.CoinCellViewModel] = []
         response.coins.forEach { coin in
-            viewModeForCell.append(Main.ShowCoinsList.ViewModel.CoinCellViewModel(imageCoin: coin.image,
+            viewModeForCells.append(Main.ShowCoinsList.ViewModel.CoinCellViewModel(imageCoin: coin.image,
                                                                               nameCoin: coin.name,
                                                                               priceChangePercentage24h: coin.price_change_percentage_24h,
                                                                               priceCoin: coin.current_price))
         }
-        let viewModel = Main.ShowCoinsList.ViewModel(coinCellViewModel: viewModeForCell)
+        let viewModel = Main.ShowCoinsList.ViewModel(coinCellViewModel: viewModeForCells)
         viewController?.displayCoins(viewModel: viewModel)
+    }
+    
+    
+    //MARK: Present updated coins list
+    func presentUpdatedCoinsList(response: Main.ShowUpdateCoinList.Response) {
+        var viewModelCells: [Main.ShowUpdateCoinList.ViewModel.CoinCellViewModel] = []
+        response.coins.forEach { coin in
+            viewModelCells.append(Main.ShowUpdateCoinList.ViewModel.CoinCellViewModel(imageCoin: coin.image,
+                                                                                 nameCoin: coin.name,
+                                                                                 priceChangePercentage24h: coin.price_change_percentage_24h,
+                                                                                 priceCoin: coin.current_price))
+        }
+        let viewModel = Main.ShowUpdateCoinList.ViewModel(coinCellViewModel: viewModelCells)
+        viewController?.displayUpdatedCoins(viewModel: viewModel)
+    }
+    
+    
+    //MARK: Present coins list
+    func presentSearchedCoinsList(response: Main.ShowSearchedCoinList.Response) {
+        var viewModelCells: [Main.ShowSearchedCoinList.ViewModel.CoinCellViewModel] = []
+        response.coins.forEach { coin in
+            viewModelCells.append(Main.ShowSearchedCoinList.ViewModel.CoinCellViewModel(imageCoin: coin.image,
+                                                                                       nameCoin: coin.name,
+                                                                                       priceChangePercentage24h: coin.price_change_percentage_24h,
+                                                                                       priceCoin: coin.current_price))
+        }
+        let viewModel = Main.ShowSearchedCoinList.ViewModel(coinCellViewModel: viewModelCells)
+        viewController?.displaySearchedCoins(viewModel: viewModel)
     }
 }
