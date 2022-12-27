@@ -34,8 +34,8 @@ Distributed under the GPL-2.0 license. See ``LICENSE`` for more information.
 
 [swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
-[license-url]: https://github.com/TwinkleFoxy/Test/blob/main/LICENSE
-[license-image]: https://img.shields.io/github/license/TwinkleFoxy/Test?color=brightgreen
-[license-url]: https://github.com/TwinkleFoxy/Test/blob/main/LICENSE
+[license-url]: https://github.com/TwinkleFoxy/CryptoTracker_with_CleanSwift/blob/main/LICENSE
+[license-image]: https://img.shields.io/github/license/TwinkleFoxy/CryptoTracker_with_CleanSwift?color=brightgreen
+[license-url]: https://github.com/TwinkleFoxy/CryptoTracker_with_CleanSwift/blob/main/LICENSE
 [screenshot1-url]: https://github.com/TwinkleFoxy/CryptoTracker_with_CleanSwift/blob/main/Screenshots/Screenshot1.png?raw=true
 [screenshot2-url]: https://github.com/TwinkleFoxy/CryptoTracker_with_CleanSwift/blob/main/Screenshots/Screenshot2.png?raw=true
